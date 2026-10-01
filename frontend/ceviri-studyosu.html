@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangaVerse | Çeviri Stüdyosu</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Fonts for Manga -->
+  <link href="https://fonts.cdnfonts.com/css/anime-ace" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/cc-wild-words" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/studio.css">
+</head>
+<body class="studio-mode">
+
+  <!-- Header -->
+  <header class="studio-header">
+    <div class="studio-title">
+      <span>MangaVerse</span> Çeviri Stüdyosu
+    </div>
+    
+    <div class="studio-toolbar">
+      <button class="tool-btn active" id="toolSelect" title="Seç (Kutuları Taşı)">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+        Seç
+      </button>
+      <button class="tool-btn" id="toolStamp" title="Otomatik Yerleştirici">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        Sıralı Ekle (Tıkla)
+      </button>
+      <button class="tool-btn" id="toolEraser" title="Beyaz Fırça ile Orijinal Yazıyı Sil">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+        Beyaz Fırça (Silgi)
+      </button>
+      <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+      <button class="tool-btn btn-export" id="btnExport">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Sayfayı İndir
+      </button>
+      <a href="admin.html" class="tool-btn" style="background:transparent; border-color:transparent; color:#9ca3af;">Çıkış</a>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="studio-main">
+    
+    <!-- Sidebar: Text Translations -->
+    <aside class="studio-sidebar">
+      <div class="sidebar-header">
+        <h3>Çeviri Satırları</h3>
+        <p>Balonların içine yerleşecek metinleri sırayla buraya yaz.</p>
+      </div>
+      <div class="text-lines-container" id="textLinesContainer">
+        <!-- Lines will be injected here -->
+      </div>
+      <div style="padding: 15px;">
+        <button class="add-line-btn" id="btnAddLine">+ Yeni Satır Ekle</button>
+      </div>
+    </aside>
+
+    <!-- Center: Canvas Workspace -->
+    <section class="studio-canvas-area" id="canvasArea">
+      
+      <div class="upload-overlay" id="uploadOverlay">
+        <label class="upload-box">
+          <input type="file" id="imageUploader" accept="image/png, image/jpeg, image/webp">
+          <div class="upload-icon">📥</div>
+          <h2 style="margin:0 0 10px 0; color:#fff;">Manga Sayfasını Yükle</h2>
+          <p style="color:var(--studio-muted); margin:0;">Tıkla veya sürükle bırak</p>
+        </label>
+      </div>
+
+      <!-- The Wrapper that holds canvas and absolute positioned text boxes -->
+      <div class="canvas-wrapper" id="canvasWrapper" style="display:none;">
+        <canvas id="mangaCanvas"></canvas>
+        <div id="overlaysContainer"></div>
+      </div>
+
+    </section>
+
+    <!-- Right: Settings -->
+    <aside class="studio-settings">
+      <div class="setting-group">
+        <label>Silgi (Fırça) Boyutu</label>
+        <input type="number" id="eraserSize" value="40" min="5" max="150">
+      </div>
+      
+      <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0;"></div>
+      <h3 style="font-size:0.9rem; margin:0 0 15px 0;">Yazı Tipi (Font) Ayarları</h3>
+      
+      <div class="setting-group">
+        <label>Font Seçimi</label>
+        <select id="fontFamily">
+          <option value="'Anime Ace', sans-serif">Anime Ace (Standart)</option>
+          <option value="'CC Wild Words', sans-serif">Wild Words (Agresif)</option>
+          <option value="'Inter', sans-serif">Inter (Düz)</option>
+        </select>
+      </div>
+      
+      <div class="setting-group">
+        <label>Varsayılan Büyüklük (px)</label>
+        <input type="number" id="fontSize" value="22" min="10" max="100">
+      </div>
+      
+      <div class="setting-group">
+        <label>Yazı Rengi</label>
+        <input type="color" id="fontColor" value="#000000">
+      </div>
+      
+      <div class="setting-group">
+        <label>Satır Yüksekliği</label>
+        <input type="number" id="lineHeight" value="1.2" step="0.1" min="0.8" max="2.0">
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="js/studio.js"></script>
+</body>
+</html>

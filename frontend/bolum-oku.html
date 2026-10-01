@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="readerTitle">Okuma Modu — MangaVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/reader.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8b5cf6">
+</head>
+<body>
+
+<!-- Ambilight Background -->
+<div class="ambilight-bg" id="ambilightBg"></div>
+
+<div class="reader-page" id="readerPage">
+
+  <!-- ==========================================
+       READER TOPBAR
+       ========================================== -->
+  <header class="reader-topbar" id="readerTopbar">
+    <div class="reader-topbar-left">
+      <a href="javascript:history.back()" class="reader-back-btn" id="readerBackBtn" title="Geri Dön">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <div style="min-width:0;">
+        <a id="readerSeriesLink" href="seri-detay.html" class="reader-series-title" style="display:block; text-decoration:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Manga Adı</a>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div class="reader-chapter-title" data-chapter-num>Bölüm Yükleniyor...</div>
+          <div id="liveReadersBadge" style="display:none; font-size:10px; padding:2px 6px; background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.3); color:rgb(16, 185, 129); border-radius:10px; font-weight:700; align-items:center; gap:4px; margin-top:2px;">
+            <span style="width:6px; height:6px; background:currentColor; border-radius:50%; display:inline-block; animation:pulse 1.5s infinite;"></span>
+            <span id="liveReadersCount">1 Okuyucu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter Selectors Center -->
+    <div class="reader-topbar-center">
+      <div class="reader-chapter-nav">
+        <button class="reader-nav-btn" id="chapterPrev" title="Önceki Bölüm">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+        </button>
+        <select class="reader-chapter-select" id="chapterSelectMenu">
+          <!-- Options rendered by JS -->
+        </select>
+        <button class="reader-nav-btn" id="chapterNext" title="Sonraki Bölüm">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="4" x2="19" y2="20"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Options Menu Right -->
+    <div class="reader-topbar-right">
+      
+      <!-- Add to List Dropdown -->
+      <div style="position:relative; display:inline-block;" id="readerListDropdownWrap">
+        <button class="reader-nav-btn" id="readerListBtn" title="Listeye Ekle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div id="readerListMenu" style="display:none; position:absolute; top:40px; right:0; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-md); box-shadow:0 4px 12px rgba(0,0,0,0.5); z-index:100; min-width:180px; padding:var(--space-2); flex-direction:column; gap:4px;">
+          <!-- Items injected by JS -->
+        </div>
+      </div>
+      <!-- Mode selection toggle -->
+      <div class="reader-mode-group">
+        <button class="reader-mode-btn active" data-reader-mode="vertical" title="Dikey Webtoon Kaydırma">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="12" height="12"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+          Dikey
+        </button>
+        <button class="reader-mode-btn" data-reader-mode="paged" title="Manga Sayfa Modu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+          Sayfalı
+        </button>
+      </div>
+
+      <!-- Offline Download -->
+      <button class="reader-nav-btn" id="downloadChapterBtn" title="Bölümü Cihaza İndir (İnternetsiz Okuma)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </button>
+
+      <!-- Toggle theme -->
+      <button class="reader-nav-btn" id="nightModeToggle" title="Gece Modu / Tema değiştir">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+
+      <!-- Toggle Fullscreen -->
+      <button class="reader-nav-btn" id="fullscreenBtn" title="Tam Ekran Modu (Klavye: F)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+      </button>
+
+      <!-- Show shortcuts modal -->
+      <button class="reader-nav-btn" onclick="document.getElementById('shortcutModal').classList.add('active')" title="Klavye Kısayolları">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       READER IMAGES DISPLAY CONTAINER
+       ========================================== -->
+  <div class="reader-content reader-vertical" id="readerContent">
+    <!-- Hydrated dynamically via reader.js -->
+    <div style="display:flex; align-items:center; justify-content:center; min-height:80vh;">
+      <span class="animate-rotate" style="font-size:2rem;">🔄</span>
+    </div>
+  </div>
+
+  <!-- Mobile Touch clickzones (Paged Mode) -->
+  <div id="prevPageZone" style="position:fixed; left:0; top:56px; bottom:60px; width:25%; z-index:9; cursor:w-resize; display:none;"></div>
+  <div id="nextPageZone" style="position:fixed; right:0; top:56px; bottom:60px; width:25%; z-index:9; cursor:e-resize; display:none;"></div>
+
+  <!-- ==========================================
+       READER PROGRESS BOTTOMBAR
+       ========================================== -->
+  <footer class="reader-bottombar" id="readerBottombar">
+    
+    <button class="reader-nav-btn" id="pagePrev" style="display:none;" title="Önceki Sayfa">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="reader-progress-wrap">
+      <span class="reader-page-counter" data-current-page>1</span>
+      <div class="reader-progress-track" id="progressTrack">
+        <div class="reader-progress-fill" id="readerProgressFill" style="width:0%"></div>
+        <div class="reader-progress-thumb" id="readerProgressThumb" style="left:0%"></div>
+      </div>
+      <span class="reader-page-counter" data-total-pages>?</span>
+    </div>
+
+    <button class="reader-nav-btn" id="pageNext" style="display:none;" title="Sonraki Sayfa">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </footer>
+
+  <!-- ==========================================
+       KEYBOARD SHORTCUTS MODAL
+       ========================================== -->
+  <div class="shortcut-modal" id="shortcutModal">
+    <div class="shortcut-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-4);">
+        <h3 style="font-size:var(--text-base); font-weight:var(--font-bold);">Klavye Kısayolları</h3>
+        <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="document.getElementById('shortcutModal').classList.remove('active')">✕</button>
+      </div>
+
+      <div class="shortcut-row">
+        <span>Sayfa İleri (Sayfalı Mod)</span>
+        <span class="shortcut-key">Sağ Ok (→)</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Sayfa Geri (Sayfalı Mod)</span>
+        <span class="shortcut-key">Sol Ok (←)</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Tam Ekran</span>
+        <span class="shortcut-key">F</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Kapat / Geri Dön</span>
+        <span class="shortcut-key">ESC</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script>
+if('caches' in window){caches.keys().then(k=>k.forEach(c=>{if(c!=='mangaverse-v4')caches.delete(c)}))}
+</script>
+<script type="module" src="js/main.js?v=4"></script>
+
+</body>
+</html>

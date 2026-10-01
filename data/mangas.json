@@ -1,0 +1,94 @@
+[
+  {
+    "id": "1",
+    "title": "Solo Leveling",
+    "slug": "solo-leveling",
+    "author": "Chugong",
+    "artist": "DUBU",
+    "rating": "4.9",
+    "chapters": 179,
+    "lastChapter": 179,
+    "status": "Tamamlandı",
+    "cover": "https://manga-tr.com/image/poster/solo-leveling.jpg",
+    "banner": "https://images.alphacoders.com/133/1338690.png",
+    "synopsis": "On yıl önce, gerçek dünya ile canavarların yaşadığı boyutları birbirine bağlayan \"Kapı\" (Gate) açıldı. Dünyayı korumak için bazı sıradan insanlar uyanarak özel güçler kazandı. Bu kişilere \"Avcı\" deniyor. Sung Jin-Woo ise E-Serisi, yani en zayıf avcıdır.",
+    "genres": [
+      "Aksiyon",
+      "Macera",
+      "Fantezi"
+    ],
+    "tags": [
+      "Sistem",
+      "Seviye Atlama",
+      "Büyü",
+      "Zindan",
+      "Canavarlar",
+      "Reenkarnasyon"
+    ],
+    "views": "2.4M",
+    "year": 2018,
+    "isTrending": true,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "id": "2",
+    "title": "One Piece",
+    "slug": "one-piece",
+    "author": "Eiichiro Oda",
+    "artist": "Eiichiro Oda",
+    "rating": "4.8",
+    "chapters": 1100,
+    "lastChapter": 1100,
+    "status": "Devam Ediyor",
+    "cover": "https://manga-tr.com/image/poster/one-piece.jpg",
+    "banner": "https://images.alphacoders.com/132/1329188.jpeg",
+    "synopsis": "Gol D. Roger, her şeyi elde etmiş efsanevi Korsanlar Kralı'dır. İdam edilmeden önceki son sözleri, okyanusun en büyük hazinesi 'One Piece'i bulmaya yönelik tüm dünyada büyük bir çağ başlatır.",
+    "genres": [
+      "Aksiyon",
+      "Macera",
+      "Komedi"
+    ],
+    "tags": [
+      "Korsanlar",
+      "Süper Güçler",
+      "Dostluk",
+      "Denizler"
+    ],
+    "views": "5.1M",
+    "year": 1997,
+    "isTrending": true,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "id": "3",
+    "title": "Jujutsu Kaisen",
+    "slug": "jujutsu-kaisen",
+    "author": "Gege Akutami",
+    "artist": "Gege Akutami",
+    "rating": "4.7",
+    "chapters": 240,
+    "lastChapter": 240,
+    "status": "Devam Ediyor",
+    "cover": "https://manga-tr.com/image/poster/jujutsu-kaisen.jpg",
+    "banner": "https://images.alphacoders.com/131/1317424.jpeg",
+    "synopsis": "Yuji Itadori, inanılmaz bir fiziksel yeteneğe sahip sıradan bir lise öğrencisidir. Bir gün, okuldaki Okültizm Kulübü'ndeki arkadaşları 'Lanet' denilen varlıkların mühürlendiği bir nesneyi açarlar ve dehşet verici olaylar başlar.",
+    "genres": [
+      "Aksiyon",
+      "Doğaüstü",
+      "Korku"
+    ],
+    "tags": [
+      "Lanetler",
+      "Okül",
+      "Okul Hayatı",
+      "Büyü"
+    ],
+    "views": "1.8M",
+    "year": 2018,
+    "isTrending": false,
+    "isNew": true,
+    "isFeatured": false
+  }
+]

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangaVerse | Yönetici Paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <span class="admin-brand-icon">🎌</span>
+      <span class="admin-brand-text">MangaVerse<br><small>Yönetici</small></span>
+    </div>
+    
+    <nav class="admin-nav">
+      <a href="#" class="admin-nav-item active" data-tab="dashboard">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Panel
+      </a>
+      <a href="#" class="admin-nav-item" data-tab="mangas">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        Mangalar
+      </a>
+      <a href="#" class="admin-nav-item" data-tab="users">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        Kullanıcılar
+      </a>
+      <a href="#" class="admin-nav-item" data-tab="comments">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        Yorumlar
+      </a>
+      <a href="#" class="admin-nav-item" data-tab="settings">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Site Görünümü
+      </a>
+      <a href="ceviri-studyosu.html" class="admin-nav-item" style="color: #8b5cf6; font-weight: bold;">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        Çeviri Stüdyosu
+      </a>
+      <a href="#" class="admin-nav-item" data-tab="menus">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        Menü Yönetimi
+      </a>
+      <a href="/" class="admin-nav-item" style="margin-top:auto; color:var(--color-danger);">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        Siteden Çık
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Admin Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 id="adminPageTitle">Kontrol Paneli</h1>
+      <div class="admin-user">
+        <div class="admin-avatar">👑</div>
+        <span>Kurucu</span>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <!-- DASHBOARD TAB -->
+      <div id="tab-dashboard" class="admin-tab active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Toplam Manga</h3>
+            <div class="stat-value">3</div>
+          </div>
+          <div class="stat-card">
+            <h3>Okuyucu Sayısı</h3>
+            <div class="stat-value">1,240</div>
+          </div>
+          <div class="stat-card">
+            <h3>Okunan Bölüm</h3>
+            <div class="stat-value">45K+</div>
+          </div>
+        </div>
+        
+        <div class="admin-panel-section">
+          <h2>Son Eklenen Seriler</h2>
+          <div id="adminMangaList" class="admin-manga-list">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- MANGAS TAB -->
+      <div id="tab-mangas" class="admin-tab">
+        <div class="admin-panel-section" style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+          <h2>Manga Yönetimi</h2>
+          <button class="btn btn-primary" id="btnShowAddMangaForm">+ Yeni Seri Ekle</button>
+        </div>
+
+        <div id="adminMangaTableContainer" style="overflow-x:auto;">
+          <table class="admin-table" style="width:100%; text-align:left; border-collapse:collapse; background:rgba(0,0,0,0.2); border-radius:var(--radius-md);">
+            <thead>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <th style="padding:15px;">Kapak</th>
+                <th style="padding:15px;">Seri Adı</th>
+                <th style="padding:15px;">Bölüm Sayısı</th>
+                <th style="padding:15px;">Durum</th>
+                <th style="padding:15px; text-align:right;">İşlemler</th>
+              </tr>
+            </thead>
+            <tbody id="adminMangaTbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="addMangaFormWrapper" style="display:none; margin-top:30px; background:rgba(255,255,255,0.02); padding:20px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,0.05);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2 style="margin:0;">Yeni Seri Oluştur</h2>
+            <button class="btn btn-outline" id="btnCancelAddManga">İptal</button>
+          </div>
+          <form id="addMangaForm" class="admin-form">
+            <div class="form-group">
+              <label>Seri Adı</label>
+              <input type="text" id="mTitle" placeholder="Örn: Solo Leveling" required>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Yazar</label>
+                <input type="text" id="mAuthor" placeholder="Örn: Chugong" required>
+              </div>
+              <div class="form-group">
+                <label>Çizer</label>
+                <input type="text" id="mArtist" placeholder="Örn: DUBU" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Kapak Resmi URL</label>
+              <input type="url" id="mCover" placeholder="https://..." required>
+            </div>
+            <div class="form-group">
+              <label>Açıklama (Özet)</label>
+              <textarea id="mSynopsis" rows="4" placeholder="Serinin konusu..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label>1. Bölümü Yükle (Sürükle Bırak)</label>
+              <div class="drag-drop-zone" id="dragDropZone">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="48" height="48" style="color:var(--color-primary);margin-bottom:10px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                <p>Resimleri buraya sürükleyin veya <span style="color:var(--color-primary);cursor:pointer;text-decoration:underline;">göz atın</span></p>
+                <input type="file" id="mFiles" multiple accept="image/*" style="display:none;">
+              </div>
+              <div id="previewZone" class="preview-zone"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:15px; font-size:16px;">Seriyi Sisteme Ekle</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- USERS TAB -->
+      <div id="tab-users" class="admin-tab">
+        <div class="admin-panel-section">
+          <h2>Kullanıcı Yönetimi</h2>
+          <div style="overflow-x:auto;">
+            <table class="admin-table" style="width:100%; text-align:left; border-collapse:collapse; background:rgba(0,0,0,0.2); border-radius:var(--radius-md);">
+              <thead>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                  <th style="padding:15px;">Kullanıcı Adı</th>
+                  <th style="padding:15px;">E-posta</th>
+                  <th style="padding:15px;">Yetki</th>
+                  <th style="padding:15px;">XP</th>
+                  <th style="padding:15px; text-align:right;">İşlemler</th>
+                </tr>
+              </thead>
+              <tbody id="adminUsersTbody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMENTS TAB -->
+      <div id="tab-comments" class="admin-tab">
+        <div class="admin-panel-section">
+          <h2>Global Yorum Denetimi</h2>
+          <div id="adminCommentsList" style="display:flex; flex-direction:column; gap:15px;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- SETTINGS TAB -->
+      <div id="tab-settings" class="admin-tab">
+        <div class="admin-panel-section" style="margin-bottom:30px;">
+          <h2>Site Duyuruları (Global Banner)</h2>
+          <form id="announcementForm" class="admin-form" style="max-width: 600px;">
+            <div class="form-group">
+              <label>Duyuru Metni</label>
+              <textarea id="annText" class="admin-input" rows="3" placeholder="Tüm kullanıcılara gösterilecek duyuruyu yazın..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Duyuru Tipi</label>
+              <select id="annType" class="admin-input" style="width:100%; padding:10px; background:rgba(0,0,0,0.5); color:white; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
+                <option value="info">Bilgi (Mavi)</option>
+                <option value="success">Başarı (Yeşil)</option>
+                <option value="warning">Uyarı (Sarı)</option>
+                <option value="danger">Acil (Kırmızı)</option>
+              </select>
+            </div>
+            <div class="form-group" style="display:flex; align-items:center; gap:10px;">
+              <input type="checkbox" id="annActive" style="width:18px; height:18px;">
+              <label for="annActive" style="margin:0; cursor:pointer;">Duyuruyu Aktif Et (Göster)</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding:15px; font-size:16px;">Duyuruyu Güncelle</button>
+          </form>
+        </div>
+
+        <div class="admin-panel-section">
+          <h2>Site Görünümü Ayarları</h2>
+          <form id="siteSettingsForm" class="admin-form" style="max-width: 600px;">
+            <div class="form-group">
+              <label>Ana Renk (Primary Color)</label>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input type="color" id="setPrimaryColor" style="width:50px; height:50px; padding:0; border:none; border-radius:8px; cursor:pointer;">
+                <input type="text" id="setPrimaryColorText" placeholder="#8b5cf6" style="flex:1;" class="admin-input">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Font Ailesi</label>
+              <select id="setFontFamily" class="admin-input" style="width:100%; padding:10px; background:rgba(0,0,0,0.5); color:white; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
+                <option value="'Outfit', sans-serif">Outfit (Modern)</option>
+                <option value="'Inter', sans-serif">Inter (Klasik)</option>
+                <option value="'Roboto', sans-serif">Roboto (Google)</option>
+                <option value="'Poppins', sans-serif">Poppins (Yuvarlak)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding:15px; font-size:16px;">Tasarımı Kaydet ve Uygula</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- MENUS TAB -->
+      <div id="tab-menus" class="admin-tab">
+        <div class="admin-panel-section">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2>Menü Yönetimi</h2>
+          </div>
+          
+          <h3>Yan Menü (Sidebar)</h3>
+          <div id="adminSidebarLinks" style="display:flex; flex-direction:column; gap:10px; margin-bottom: 30px;">
+            <!-- Rendered by JS -->
+          </div>
+          <button class="btn btn-outline" id="btnAddSidebarLink" style="margin-bottom:20px;">+ Sidebar Link Ekle</button>
+
+          <h3>Mobil Alt Menü</h3>
+          <div id="adminBottomLinks" style="display:flex; flex-direction:column; gap:10px; margin-bottom: 10px;">
+            <!-- Rendered by JS -->
+          </div>
+          <button class="btn btn-outline" id="btnAddBottomLink" style="margin-bottom:20px;">+ Alt Menü Link Ekle</button>
+          
+          <div style="margin-top:20px;">
+            <button class="btn btn-primary" id="btnSaveMenus" style="padding:15px; font-size:16px; width:100%;">Menüleri Kaydet</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </main>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

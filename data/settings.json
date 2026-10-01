@@ -1,0 +1,74 @@
+{
+  "theme": {
+    "colorPrimary": "#8b5cf6",
+    "colorPrimaryHover": "#7c3aed",
+    "colorPrimaryGlow": "rgba(139, 92, 246, 0.2)",
+    "fontFamily": "'Outfit', sans-serif"
+  },
+  "sidebarLinks": [
+    {
+      "id": "1",
+      "title": "Anasayfa",
+      "url": "index.html",
+      "icon": "home"
+    },
+    {
+      "id": "2",
+      "title": "Katalog",
+      "url": "katalog.html",
+      "icon": "catalog"
+    },
+    {
+      "id": "3",
+      "title": "Trendler",
+      "url": "katalog.html?sort=trending",
+      "icon": "trending"
+    },
+    {
+      "id": "4",
+      "title": "En Yüksek Puan",
+      "url": "katalog.html?sort=rating",
+      "icon": "star"
+    },
+    {
+      "id": "5",
+      "title": "Yeni Eklenenler",
+      "url": "katalog.html?sort=new",
+      "icon": "new"
+    }
+  ],
+  "bottomLinks": [
+    {
+      "id": "1",
+      "title": "Anasayfa",
+      "url": "index.html",
+      "icon": "home"
+    },
+    {
+      "id": "2",
+      "title": "Katalog",
+      "url": "katalog.html",
+      "icon": "catalog"
+    },
+    {
+      "id": "3",
+      "title": "Ara",
+      "url": "#",
+      "icon": "search",
+      "customId": "mobileNavSearch"
+    },
+    {
+      "id": "4",
+      "title": "Kitaplık",
+      "url": "profil.html?tab=library",
+      "icon": "library"
+    },
+    {
+      "id": "5",
+      "title": "Menü",
+      "url": "#",
+      "icon": "menu",
+      "customId": "mobileNavMore"
+    }
+  ]
+}

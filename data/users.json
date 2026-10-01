@@ -1,0 +1,64 @@
+[
+  {
+    "username": "abdodex",
+    "email": "addodex@gmail.com",
+    "password": "ec7b78ef8c16cfe4b111e16238d9fd8de597d159d8ca7c9768f690b65e7f05fc",
+    "id": "fb2308d6-fe2f-4e93-8e5e-231ce53db424",
+    "role": "admin",
+    "library": [],
+    "favorites": [],
+    "achievements": [],
+    "xp": 10,
+    "guildId": "d2ec512b-698f-46fa-b19b-f06ddc774a4d",
+    "joined": "2026-07-17T18:53:05.758Z"
+  },
+  {
+    "username": "testuser",
+    "email": "test@test.com",
+    "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "id": "e44a61ac-f3c9-401a-bffe-3444a4f7b142",
+    "role": "user",
+    "library": [],
+    "favorites": [],
+    "achievements": [],
+    "xp": 0,
+    "guildId": null,
+    "joined": "2026-07-17T18:54:58.366Z"
+  },
+  {
+    "username": "subagent",
+    "email": "sub@test.com",
+    "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "id": "df987cc1-e767-47d6-808f-623375811f6e",
+    "role": "user",
+    "library": [],
+    "favorites": [],
+    "achievements": [],
+    "xp": 0,
+    "guildId": null,
+    "joined": "2026-07-17T18:57:57.514Z"
+  },
+  {
+    "username": "testuser_fl7n",
+    "email": "test_fl7n@test.com",
+    "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "id": "c50bd906-cafd-41c4-92fa-9c2c86bb03ee",
+    "role": "user",
+    "library": [],
+    "favorites": [],
+    "reading_lists": {
+      "reading": [],
+      "completed": [],
+      "dropped": [],
+      "plan_to_read": []
+    },
+    "avatar": "",
+    "cover_image": "",
+    "achievements": [],
+    "xp": 0,
+    "guildId": null,
+    "isBanned": false,
+    "muteUntil": null,
+    "joined": "2026-07-18T13:36:02.862Z"
+  }
+]

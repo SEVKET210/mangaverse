@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manga Detay — MangaVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8b5cf6">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar" id="appTopbar">
+  <div class="topbar-left">
+    <button class="topbar-menu-btn" id="mobileMenuBtn" aria-label="Menü Aç">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a href="index.html" class="topbar-brand">
+      <div class="topbar-brand-icon">🎌</div>
+      <span class="topbar-brand-text">MangaVerse</span>
+    </a>
+  </div>
+  <div class="topbar-center">
+    <div class="topbar-search-wrap">
+      <svg class="topbar-search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="topbarSearchInput" class="topbar-search-input" placeholder="Manga ara..." autocomplete="off">
+      <div class="search-results-dropdown" id="topbarSearchResults"></div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div id="topbarAuthArea">
+      <div class="topbar-auth-guest">
+        <a href="giris.html" class="btn btn-ghost btn-sm">Giriş Yap</a>
+        <a href="giris.html?tab=register" class="btn btn-primary btn-sm">Kayıt Ol</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="app-container">
+
+  <!-- SIDEBAR -->
+  <aside class="app-sidebar" id="appSidebar">
+    <div class="sidebar-inner">
+      <a href="index.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🎌</div>
+        <span class="sidebar-logo-text">MangaVerse</span>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Keşfet</div>
+        <nav class="sidebar-nav">
+          <a href="index.html" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span class="sidebar-nav-text">Anasayfa</span></a>
+          <a href="katalog.html" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><span class="sidebar-nav-text">Katalog</span></a>
+          <a href="katalog.html?sort=trending" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><span class="sidebar-nav-text">Trendler</span></a>
+          <a href="katalog.html?sort=rating" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="sidebar-nav-text">En Yüksek Puan</span></a>
+          <a href="katalog.html?sort=new" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><span class="sidebar-nav-text">Yeni Eklenenler</span></a>
+        </nav>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Kitaplığım</div>
+        <nav class="sidebar-nav">
+          <a href="profil.html?tab=library" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><span class="sidebar-nav-text">Okuma Listesi</span></a>
+          <a href="profil.html?tab=favorites" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><span class="sidebar-nav-text">Favorilerim</span></a>
+          <a href="profil.html?tab=history" class="sidebar-nav-link"><div class="sidebar-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="sidebar-nav-text">Geçmiş</span></a>
+        </nav>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-accordion">
+          <button class="sidebar-accordion-trigger" id="sidebarCatTrigger" aria-expanded="true">
+            <div class="sidebar-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <span class="sidebar-accordion-label">Türler</span>
+            <svg class="caret-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sidebar-accordion-content" id="sidebarCatContent">
+            <div class="sidebar-cat-grid">
+              <a href="katalog.html?genre=aksiyon" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#EF4444"></span>Aksiyon</a>
+              <a href="katalog.html?genre=romantizm" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#EC4899"></span>Romantizm</a>
+              <a href="katalog.html?genre=fantezi" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#8B5CF6"></span>Fantezi</a>
+              <a href="katalog.html?genre=isekai" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#6366F1"></span>Isekai</a>
+              <a href="katalog.html?genre=murim" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#F59E0B"></span>Murim</a>
+              <a href="katalog.html?genre=dram" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#6366F1"></span>Dram</a>
+              <a href="katalog.html?genre=komedi" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#FBBF24"></span>Komedi</a>
+              <a href="katalog.html?genre=macera" class="sidebar-cat-link"><span class="sidebar-cat-dot" style="background:#3B82F6"></span>Macera</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-bottom">
+        <button class="sidebar-theme-btn" data-theme-toggle>
+          <div class="sidebar-theme-icon">🌓</div>
+          <span class="sidebar-nav-text">Temayı Değiştir</span>
+        </button>
+        <div id="sidebarUserPanel" style="margin-top:var(--space-2);"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-bottom-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Anasayfa</span></a>
+    <a href="katalog.html" class="mobile-bottom-link active"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg><span>Katalog</span></a>
+    <a href="#" id="mobileNavSearch" class="mobile-bottom-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Ara</span></a>
+    <a href="profil.html?tab=library" class="mobile-bottom-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg><span>Kitaplık</span></a>
+    <a href="#" id="mobileNavMore" class="mobile-bottom-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg><span>Menü</span></a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- Blurred Background Banner -->
+    <div style="position:relative; height:280px; overflow:hidden;">
+      <img id="seriesBgCoverImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;filter:blur(36px) brightness(0.2);transform:scale(1.1);" loading="lazy" decoding="async">
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--color-bg));"></div>
+    </div>
+
+    <section style="margin-top:-200px; position:relative; z-index:5; padding-bottom:var(--space-12);">
+      <div class="container">
+
+        <!-- Series header row -->
+        <div style="display:flex; gap:var(--space-6); flex-wrap:wrap; margin-bottom:var(--space-8);">
+
+          <!-- Cover image -->
+          <div style="flex-shrink:0;">
+            <img id="seriesCoverImg" src="" alt="Manga Kapak" style="width:180px;aspect-ratio:2/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:2px solid rgba(255,255,255,0.1);" loading="lazy" decoding="async">
+          </div>
+
+          <!-- Meta info -->
+          <div style="flex:1; min-width:260px; display:flex; flex-direction:column; gap:var(--space-4); padding-top:var(--space-4);">
+            <div class="breadcrumb" style="margin:0;">
+              <a href="index.html" class="breadcrumb-item">Anasayfa</a>
+              <span class="breadcrumb-sep">›</span>
+              <a href="katalog.html" class="breadcrumb-item">Katalog</a>
+              <span class="breadcrumb-sep">›</span>
+              <span class="breadcrumb-item current" id="seriesTitleBreadcrumb">...</span>
+            </div>
+
+            <div>
+              <h1 style="font-size:var(--text-3xl);font-weight:var(--font-black);line-height:var(--leading-tight);" id="seriesTitle">Yükleniyor...</h1>
+              <p id="seriesAltTitle" style="color:var(--color-text-secondary);font-size:var(--text-sm);margin-top:4px;"></p>
+            </div>
+
+            <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;" id="seriesStatusWrap"></div>
+
+            <!-- Stats -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;">
+              <div>
+                <div style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);letter-spacing:0.06em;">Puan</div>
+                <div style="font-size:var(--text-xl);font-weight:var(--font-black);color:var(--color-warning);" id="seriesRating">—</div>
+              </div>
+              <div>
+                <div style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);letter-spacing:0.06em;">Okunma</div>
+                <div style="font-size:var(--text-xl);font-weight:var(--font-black);" id="seriesViews">—</div>
+              </div>
+              <div>
+                <div style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);letter-spacing:0.06em;">Takip</div>
+                <div style="font-size:var(--text-xl);font-weight:var(--font-black);" id="seriesFollows">—</div>
+              </div>
+            </div>
+
+            <!-- Genre tags -->
+            <div class="tag-list" id="seriesGenres"></div>
+
+            <!-- Action buttons -->
+            <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+              <a id="readFirstBtn" href="#" class="btn btn-primary btn-lg">▶ Şimdi Oku</a>
+              <button id="addLibraryBtn" class="btn btn-ghost btn-lg">📚 Kütüphaneye Ekle</button>
+              <button id="addFavBtn" class="btn btn-ghost">❤️</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="layout-columns">
+          <div style="display:flex;flex-direction:column;gap:var(--space-6);">
+
+            <!-- Description -->
+            <div class="glass-panel">
+              <h3 style="font-size:var(--text-base);font-weight:var(--font-bold);margin-bottom:var(--space-3);">📖 Özet</h3>
+              <p id="seriesDescription" style="color:var(--color-text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);"></p>
+            </div>
+
+            <!-- Chapters -->
+            <div class="glass-panel">
+              <h3 style="font-size:var(--text-base);font-weight:var(--font-bold);margin-bottom:var(--space-4);">Bölümler</h3>
+              <div style="max-height:420px;overflow-y:auto;border-radius:var(--radius-md);border:1px solid var(--color-border);" id="chapterListContainer"></div>
+            </div>
+
+            <!-- Comments -->
+            <div class="glass-panel">
+              <h3 style="font-size:var(--text-base);font-weight:var(--font-bold);margin-bottom:var(--space-4);" id="commentCountText">Yorumlar</h3>
+              <form id="commentForm" style="display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-6);">
+                <textarea id="commentText" class="form-input" style="height:80px;resize:none;" placeholder="Düşüncelerini paylaş..." required></textarea>
+                <div style="display:flex;justify-content:flex-end;">
+                  <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+              </form>
+              <div id="commentsContainer" style="display:flex;flex-direction:column;gap:var(--space-3);"></div>
+            </div>
+
+          </div>
+
+          <!-- Right sidebar widget -->
+          <div class="sticky-sidebar">
+            <div class="sidebar-widget">
+              <h4 class="sidebar-widget-title">📌 Seri Detayları</h4>
+              <div style="display:flex;flex-direction:column;gap:var(--space-3);font-size:var(--text-sm);">
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:6px;">
+                  <span style="color:var(--color-text-secondary);">Yazar</span>
+                  <span style="font-weight:var(--font-semi);" id="seriesAuthor">—</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:6px;">
+                  <span style="color:var(--color-text-secondary);">Çizer</span>
+                  <span style="font-weight:var(--font-semi);" id="seriesArtist">—</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:6px;">
+                  <span style="color:var(--color-text-secondary);">Yıl</span>
+                  <span style="font-weight:var(--font-semi);" id="seriesYear">—</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--color-text-secondary);">Bölüm</span>
+                  <span style="font-weight:var(--font-semi);" id="seriesChapters">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);">
+        <p class="footer-copyright">© 2026 MangaVerse. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+if('caches' in window){caches.keys().then(k=>k.forEach(c=>{if(c!=='mangaverse-v4')caches.delete(c)}))}
+</script>
+<script type="module" src="js/main.js?v=4"></script>
+</body>
+</html>

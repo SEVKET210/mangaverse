@@ -1,0 +1,19 @@
+{
+  "name": "mangaverse-new",
+  "version": "1.0.0",
+  "description": "Sıfırdan tasarlanmış yüksek performanslı Türkçe manga platformu",
+  "type": "module",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "lru-cache": "^11.0.0"
+  }
+}

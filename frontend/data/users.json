@@ -1,0 +1,24 @@
+[
+  {
+    "username": "testuser",
+    "email": "testuser@mangaverse.com",
+    "password": "9f735e0df9a1ddc702bf0a1a7b83033f9f7153a00c29de82cedadc9957289b05",
+    "id": "29ea29fd-76cf-4d4b-8594-2ae074346e12",
+    "library": [
+      "solo-leveling"
+    ],
+    "favorites": [],
+    "achievements": [],
+    "joined": "2026-07-14T16:06:05.925Z"
+  },
+  {
+    "username": "abdodex",
+    "email": "addodex@gmail.com",
+    "password": "cd0a00e59fad865b6529768e92a5f78c503083ffa2542c34fa9a55699511c646",
+    "id": "e9cb8d1d-a77e-4c47-9113-eded275a2a88",
+    "library": [],
+    "favorites": [],
+    "achievements": [],
+    "joined": "2026-07-14T19:32:15.202Z"
+  }
+]
